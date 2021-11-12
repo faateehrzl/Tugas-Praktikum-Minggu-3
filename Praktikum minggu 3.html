@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum3</title>
+    
+</head>
+<body>
+    <label for="theme">Select Theme : </label>
+    <select name="theme" id="theme" onchange="getTheme()">
+        <option value="putih">White</option>
+        <option value="hitam">Black</option>
+    </select>
+    <br>
+    <h1>This is My Website</h1>
+    <p><b>Muhammad Faatih Rizal Auliya - 119140212</b> </p>
+    <br>
+    <label for="Player">Select the player : </label>
+    <select name="Player" id="Player" onchange="getMakan()">
+        <option value="">Select the player</option>
+        <option value="Leo Messi">Leo Messi</option>
+        <option value="Ronaldo">Ronaldo</option>
+        <option value="Lewandowski">Lewandowski</option>
+        <option value="Haaland">Haaland</option>
+    </select>
+
+    <p id="demo"></p>
+
+    <label for="faktorial">Masukkan Angka: </label>
+    <input type="text" id="faktorial" name="faktorial">
+    <button type="submit" id="faktorial" onclick="getFaktorial()">faktorial</button>
+
+    <p id="demo2"></p>
+
+    <script>
+        
+        function getTheme(){
+            var theme = document.getElementById("theme").value;
+            if(theme == "putih"){
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+            }else if(theme == "hitam"){
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+            }  
+        }
+
+        function getMakan(){
+            var makan = document.getElementById("makan").value;
+            if(makan == "Leo Messi"){
+                document.getElementById("demo").innerHTML = "Pemain peraih ballon dor terbanyak";
+            }else if(makan == "Ronaldo"){
+                document.getElementById("demo").innerHTML = "Pemain dengan jumlah goal terbanyak";
+            }else if(makan == "Lewandowski"){
+                document.getElementById("demo").innerHTML = "Pemain terbaik musing 2019/2020";
+            }else if(makan == "Haaland"){
+                document.getElementById("demo").innerHTML = "Wonder kid asal norwegia";
+            }else{
+                document.getElementById("demo").innerHTML = "";
+            }
+        }
+
+        function getFaktorial(){
+            var angka = document.getElementById("faktorial").value;
+            var hasil = 1;
+            var bil = 0;
+            for (bil = angka; bil >= 1; bil--){
+                hasil = hasil * bil;
+            }
+            document.getElementById("demo2").innerHTML = hasil;
+        }
+        
+    </script>
+    
+</body>
+</html>
